@@ -1,0 +1,71 @@
+### 976. Largest Perimeter Triangle
+
+#### 题目
+
+题目地址：https://leetcode.com/problems/largest-perimeter-triangle/
+
+Given an array `A` of positive lengths, return the largest perimeter of a triangle with **non-zero area**, formed from 3 of these lengths.
+
+If it is impossible to form any triangle of non-zero area, return `0`.
+
+**Example 1:**
+
+```shell
+Input: [2,1,2]
+Output: 5
+```
+
+**Example 2:**
+
+```shell
+Input: [1,2,1]
+Output: 0
+```
+
+**Example 3:**
+
+```shell
+Input: [3,2,3,4]
+Output: 10
+```
+
+**Example 4:**
+
+```shell
+Input: [3,6,2,3]
+Output: 8
+```
+
+#### 题目解释
+
+这个题目就是给你一个数组，你需要找出这个数组的三个元素，使其构成三角形，并且这个三角形的周长是最长的。
+
+这个题目在我参加360校招面试时，被要求手写代码。
+
+整体思路比较简单，可以把数组先行排序，然后从最后三个元素开始，判断其是否可以构成三角形，如果可以，就直接返回周长；如果不可以构成三角形，说明最后元素不合适，抛弃最后一个元素。以此类推
+
+排序我们可以直接调用python中的`sort()`函数
+
+最后时间复杂度是O(N)
+
+#### 代码实现
+
+```python
+class Solution(object):
+    def largestPerimeter(self, A):
+        """
+        :type A: List[int]
+        :rtype: int
+        """
+        A.sort()
+        n = len(A)
+        if n < 3:
+            return 0
+        for i in range(n-3, -1, -1):
+            if A[i] + A[i+1] > A[i+2] and  A[i+2] - A[i+1] < A[i]:
+                return A[i] + A[i+1] + A[i+2]   
+        return 0
+```
+
+
+
