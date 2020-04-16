@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   check:
-		name: hh
-		steps:
-			- name: Echo the greeting's time
-				run: echo "hello word"
+    name: hh
+    steps:
+      - name: Echo the greeting's time
+        run: echo "hello word"
