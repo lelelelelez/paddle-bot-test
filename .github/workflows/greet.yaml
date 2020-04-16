@@ -1,0 +1,10 @@
+name: Greet Everyone
+# This workflow is triggered on pushes to the repository.
+on: pull_request
+
+jobs:
+	check:
+		name: hh
+		steps:
+			- name: Echo the greeting's time
+				run: echo "hello word"
