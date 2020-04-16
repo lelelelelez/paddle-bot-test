@@ -3,7 +3,7 @@ name: Greet Everyone
 on: pull_request
 
 jobs:
-	check:
+  check:
 		name: hh
 		steps:
 			- name: Echo the greeting's time
