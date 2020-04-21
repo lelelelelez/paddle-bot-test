@@ -1,8 +1,0 @@
-version: '2'
-invalidStatus: "pending"
-labelRule:
-  endsWith:
-    - "g"
-  values:
-    - "bug"
-    - "enhancement"
