@@ -1,3 +1,4 @@
+import tensorflow
 import os
 import time
 print "test-bot-end"
